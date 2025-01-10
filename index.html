@@ -1,0 +1,222 @@
+<html>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        text-align: center;
+        background: linear-gradient(90deg, #334257, #1d2733);
+        color: white;
+        padding: 20px 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      header h2 {
+        font-style: italic;
+        font-size: 1.2rem;
+        margin: 10px 0 0;
+        color: #b0c7d6;
+      }
+
+      .clk {
+        text-align: center;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        max-width: 600px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .clk h1 {
+        font-size: 1.8rem;
+        margin: 20px 0;
+      }
+
+      .clk span {
+        font-family: 'Impact', sans-serif;
+        font-size: 2.5rem;
+        color: #00CFC1;
+        font-weight: bold;
+      }
+
+      button {
+        background: #00CFC1;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      button:hover {
+        background: #009f8c;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+      header nav{
+        text-align:center;
+      }
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        background: #334257;
+        color: white;
+        font-size: 0.9rem;
+        border-top: 1px solid #1d2733;
+      }
+      a{
+        text-decoration:none;
+        color:white;
+        transition:0.2s;margin:2px;
+      }
+      a:hover{
+        color:#618985;
+      }
+      .live{
+        text-align:center;
+      }
+      .live h1{
+        font-size:40px;
+      }
+    </style>
+  
+  <body>
+    <header>
+      <h1>Warrick Trust</h1>
+      <h2>Keeping Watermelons safe since 2024</h2>
+      <nav>
+        <a href = "">Our Mission</a>
+        <a href = "">Sign up</a>
+        <a href = "">Donate</a>
+        <a href = "shop.html">Shop</a>
+      </nav>
+    </header>
+    <div class = "live">
+      <h1>Live Clicks Counter</h1>
+      <h2>Clicks updated globally every 5 seconds</h2>
+    </div>
+    <div class="clk">
+      <h1>We have raised <span id = "num">0</span> clicks for Warrick.</h1>
+      <h1>Make it one more.</h1>
+      <button onclick = "addpoint()">Click For Warrick</button>
+      <h2>Warrick Gold: 0</h2>
+    </div>
+    <div class="clk">
+      <h1>We have raised <span id = "walt">0</span> clicks for Walter.</h1>
+      <h1>Make it one more.</h1>
+      <button onclick = "addwalt()">Click For Walter</button>
+      <h2 id = "k">Walter Gold: 0</h2>
+    </div>
+    <footer>
+      &copy; 2025 Warrick Trust. All rights reserved.
+    </footer>
+    <script>
+      let temp2 = 0;
+      let temp = 0;
+      var points = 0;
+      var walt = 0;
+      const wounter = document.getElementById('walt');
+      const counter = document.getElementById('num');
+      function addpoint(){
+        temp ++;
+        var add = points+temp;
+        counter.textContent = String(add) ;
+      }
+      function addwalt(){
+        temp2 ++;
+        var addup = walt+temp2;
+        wounter.textContent = String(addup) ;
+      }
+      let sp;
+      function getClicks(){
+        sp = setInterval(()=> sync(),5000);
+      }
+      async function walterdate(){
+        try {
+              const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clickwalt', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ value: temp2 })
+              });
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              temp2 = 0; 
+          } catch (error) {
+              console.error('Error in update:', error);
+          }
+      }
+      
+      async function update() {
+          try {
+              const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/click', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ value: temp })
+              });
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              temp = 0; 
+          } catch (error) {
+              console.error('Error in update:', error);
+          }
+      }
+
+      async function sync() {
+        await update(); 
+        try {
+            const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clicks');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            points = Number(data.totalClicks); 
+            counter.textContent = String(points); 
+        } catch (error) {
+            console.error('Error in sync:', error);
+        }
+        
+        await walterdate(); 
+        try {
+            const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clickswalt');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            walt = Number(data.totalClicks); 
+            wounter.textContent = String(walt); 
+        } catch (error) {
+            console.error('Error in sync:', error);
+        }
+    }
+
+    window.onload = getClicks();
+    </script>
+  </body>
+</html>
