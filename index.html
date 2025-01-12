@@ -114,7 +114,13 @@
       }
       .live h2{
         font-size:40px;
-      }
+      } 
+    .ns {
+            user-select: none; 
+            -webkit-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+    }
     </style>
   </head>
   <body>
@@ -127,19 +133,19 @@
       </nav>
     </header>
     <div class = "live">
-      <h2>Live Clicks Counter</h1>
-      <h2>Clicks updated globally every 5 seconds</h2>
+      <h2 class = "ns">Live Clicks Counter</h1>
+      <h2 class = "ns">Clicks updated globally every 5 seconds</h2>
     </div>
     <div class="clk">
-      <h2>We have raised <span id = "num">0</span> clicks for Warrick.</h1>
-      <h2>Make it one more.</h1>
-      <button onclick = "addpoint()">Click For Warrick</button>
+      <h2 class = "ns">We have raised <span id = "num">0</span> clicks for Warrick.</h1>
+      <h2 class = "ns">Make it one more.</h1>
+      <button class = "ns" onclick = "addpoint()">Click For Warrick</button>
       <h2>Warrick Gold: 0</h2>
     </div>
     <div class="clk">
-      <h2>We have raised <span id = "walt">0</span> clicks for Walter.</h1>
-      <h2>Make it one more.</h1>
-      <button onclick = "addwalt()">Click For Walter</button>
+      <h2 class = "ns">We have raised <span id = "walt">0</span> clicks for Walter.</h1>
+      <h2 class = "ns">Make it one more.</h1>
+      <button class = "ns" onclick = "addwalt()">Click For Walter</button>
       <h2 id = "k">Walter Gold: 0</h2>
     </div>
     <footer>
