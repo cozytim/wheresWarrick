@@ -1,4 +1,6 @@
- let temp2 = 0;
+document.getElementById('walter').addEventListener('click', addwalt);
+document.getElementById('warrick').addEventListener('click', addpoint);
+let temp2 = 0;
       let temp = 0;
       var points = 0;
       var walt = 0;
