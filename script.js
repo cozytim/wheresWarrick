@@ -65,7 +65,6 @@ let temp2 = 0;
             counter.textContent = String(points); 
         } catch (error) {
             console.error('Error in sync:', error);
-        }
         
         await walterdate(); 
         try {
@@ -85,6 +84,11 @@ let temp2 = 0;
         sp = setInterval(()=> sync(),5000);
       }  
     window.onload = function() {
-          document.body.style.backgroundImage = "url('stars.jpg')";
+          var url = localStorage.getItem('image');
+          if(url === 'stars'){
+                document.body.style.backgroundImage = "url('stars.jpg')";
+          } else if(url === 'snow'){
+                document.body.style.backgroundImage = "url('snowpattern.jpg')";
+          }
           getClicks();
       };
