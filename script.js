@@ -84,4 +84,7 @@ let temp2 = 0;
         sync();    
         sp = setInterval(()=> sync(),5000);
       }  
-    window.onload = getClicks();
+    window.onload = function() {
+          document.body.style.backgroundImage = "url('stars.jpg')";
+          getClicks();
+      };
