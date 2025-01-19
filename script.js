@@ -84,6 +84,7 @@ let temp2 = 0;
         sp = setInterval(()=> sync(),5000);
       }  
     window.onload = function() {
+          localStorage.setItem('image','snow');
           var url = localStorage.getItem('image');
           if(url === 'stars'){
                 document.body.style.backgroundImage = "url('stars.jpg')";
