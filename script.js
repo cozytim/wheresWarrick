@@ -21,6 +21,7 @@ let temp2 = 0;
       }
       let sp;
       function getClicks(){
+        sync();    
         sp = setInterval(()=> sync(),5000);
       }
       async function walterdate(){
