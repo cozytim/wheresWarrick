@@ -78,7 +78,7 @@ let temp2 = 0;
         } catch (error) {
             console.error('Error in sync:', error);
         }
-    }
+    }}
     function getClicks(){
         sync();    
         sp = setInterval(()=> sync(),5000);
