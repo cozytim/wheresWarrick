@@ -1,8 +1,5 @@
 document.getElementById('walter').addEventListener('click', addwalt);
 document.getElementById('warrick').addEventListener('click', addpoint);
-document.addEventListener('DOMContentLoaded', function () {
-      document.body.style.background-image = "url('stars.jpg')";
-});
 let temp2 = 0;
       let temp = 0;
       var points = 0;
