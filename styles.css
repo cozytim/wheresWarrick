@@ -1,1 +1,99 @@
-
+body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #f4f4f9;
+        color: #333;
+        line-height: 1.6;
+      }
+      header {
+        text-align: center;
+        background: linear-gradient(90deg, #334257, #1d2733);
+        color: white;
+        padding: 20px 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        font-weight: bold;
+      }
+      header h2 {
+        font-style: italic;
+        font-size: 1.2rem;
+        margin: 10px 0 0;
+        color: #b0c7d6;
+      }
+      .clk {
+        text-align: center;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        max-width: 600px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .clk h2 {
+        font-size: 1.8rem;
+        margin: 20px 0;
+      }
+      .clk span {
+        font-family: 'Impact', sans-serif;
+        font-size: 2.5rem;
+        color: #00CFC1;
+        font-weight: bold;
+      }
+      button {
+        background: #00CFC1;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      button:hover {
+        background: #009f8c;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+      button:active {
+        transform: scale(0.95);
+      }
+        button, a {
+            touch-action: manipulation; 
+        }
+      header nav{
+        text-align:center;
+      }
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        background: #334257;
+        color: white;
+        font-size: 0.9rem;
+        border-top: 1px solid #1d2733;
+      }
+      a{
+        text-decoration:none;
+        color:white;
+        transition:0.2s;margin:2px;
+      }
+      a:hover{
+        color:#618985;
+      }
+      .live{
+        text-align:center;
+      }
+      .live h2{
+        font-size:40px;
+      } 
+    .ns {
+            user-select: none; 
+            -webkit-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+    }
