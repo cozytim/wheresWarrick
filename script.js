@@ -84,12 +84,10 @@ let temp2 = 0;
         sp = setInterval(()=> sync(),5000);
       }  
     window.onload = function() {
-          localStorage.setItem('image','snow');
+          localStorage.setItem('image','stars');
           var url = localStorage.getItem('image');
           if(url === 'stars'){
                 document.body.style.backgroundImage = "url('stars.jpg')";
-          } else if(url === 'snow'){
-                document.body.style.backgroundImage = "url('snowpattern.jpg')";
           }
           getClicks();
       };
