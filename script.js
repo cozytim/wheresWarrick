@@ -20,10 +20,6 @@ let temp2 = 0;
         wounter.textContent = String(addup) ;
       }
       let sp;
-      function getClicks(){
-        sync();    
-        sp = setInterval(()=> sync(),5000);
-      }
       async function walterdate(){
         try {
               const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clickwalt', {
@@ -87,5 +83,8 @@ let temp2 = 0;
             console.error('Error in sync:', error);
         }
     }
-
+    function getClicks(){
+        sync();    
+        sp = setInterval(()=> sync(),5000);
+      }  
     window.onload = getClicks();
