@@ -54,31 +54,32 @@ let temp2 = 0;
       }
 
       async function sync() {
-        await update(); 
-        try {
-            const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clicks');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            points = Number(data.totalClicks); 
-            counter.textContent = String(points); 
-        } catch (error) {
-            console.error('Error in sync:', error);
-        
-        await walterdate(); 
-        try {
-            const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clickswalt');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            walt = Number(data.totalClicks); 
-            wounter.textContent = String(walt); 
-        } catch (error) {
-            console.error('Error in sync:', error);
+    await update(); 
+    try {
+        const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clicks');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    }}
+        const data = await response.json();
+        points = Number(data.totalClicks); 
+        counter.textContent = String(points); 
+    } catch (error) {
+        console.error('Error in sync:', error);
+    }
+
+    await walterdate(); 
+    try {
+        const response = await fetch('https://never-forget-e68c721197c4.herokuapp.com/clickswalt');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        walt = Number(data.totalClicks); 
+        wounter.textContent = String(walt); 
+    } catch (error) {
+        console.error('Error in sync:', error);
+    }
+}
     function getClicks(){
         sync();    
         sp = setInterval(()=> sync(),5000);
