@@ -85,6 +85,6 @@ let temp2 = 0;
         sp = setInterval(()=> sync(),5000);
       }  
     window.onload = function() {
-          document.body.style.backgroundImage = "url('snowpattern.jpg')";
+          document.body.style.backgroundImage = "url('braun.jpg')";
           getClicks();
       };
