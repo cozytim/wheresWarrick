@@ -82,7 +82,7 @@ let temp2 = 0;
 }
     function getClicks(){
         sync();    
-        sp = setInterval(()=> sync(),3000);
+        sp = setInterval(()=> sync(),5000);
       }  
     window.onload = function() {
           document.body.style.backgroundImage = "url('snowpattern.jpg')";
