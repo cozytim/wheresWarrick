@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .melon {
+        background-image: url('warrick.jpg');
+        width: 500px;
+        height: 500px;
+        border: 3px black solid;
+        border-radius: 5px;
+        text-align: center;
+        margin: 10px;
+      }
+      .selc-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 800px;
+        flex-wrap: wrap;
+        border:4px black;
+      }
+      h2 {
+        font-family: helvetica;
+        font-size: 35px;
+      }
+      .walter {
+        background-size: 500px 500px;
+        background-image: url('warrick.jpg');
+      }
+      .warrick {
+        background-size: 500px 500px;
+        background-image: url('warrick.jpg');
+      }
+      .jorrick {
+        background-size: 550px 500px;
+        background-image: url('watermelon.jpg');
+      }
+      header {
+        text-align: center;
+        background: #007498;
+        padding: 1px;
+      }
+      header h1 {
+        color: white;
+        font-size: 40px;
+        font-family: helvetica;
+      }
+      .fnl {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .object {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin:10px;
+      }
+      .grrr {
+        display: flex;
+        flex-direction: row;
+      }
+      .melon h2{
+        font-size:60px;
+      }
+      .melon h3{
+        font-size:30px;
+      }
+      .ns {
+            user-select: none; 
+            -webkit-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a style = "font-size:20px; color:white;text-decoration:none;" href = "index.html">Home</a>
+      <h1 class = "ns">The Fruit Farm</h1>
+    </header>
+    <div class="fnl">
+      <div style="text-align:center; font-family:helvetica;">
+        <h1 class = "ns">The Fruits on record:</h1>
+      </div>
+      <div class="selc-box">
+        <div class="melon walter">
+          <h2 class = "ns">Walter</h2>
+          <h3 class = "ns">Death:4 Dec 2024</h3>
+        </div>
+        <div class="melon warrick">
+          <h2 class = "ns">Warrick</h2>
+          <h3 class = "ns">Death:19 Dec 2024</h3>
+        </div>
+        <div id = "dvd" class="melon jorrick">
+          <h2 class = "ns">Yorrick</h2>
+        </div>
+        <div style="text-align:center; font-family:helvetica;">
+          <h1 class = "ns">Different Icons and their meanings:</h1>
+          <div class="grrr">
+            <div class="object">
+              <img style = "border:3px black solid;" src="warrick.jpg" width="100px">
+              <h3 class = "ns">Dead</h3>
+            </div>
+            <div class="object">
+              <img style = "border:3px black solid;" src="watermelon.jpg" width="100px">
+              <h3 class = "ns">Healthy</h3>
+            </div>
+            <div class="object">
+              <img style = "border:3px black solid;" src="sickmelon.jpg" width="100px">
+              <h3 class = "ns">Sick</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src = "quick.js"></script>
+  </body>
+</html>
